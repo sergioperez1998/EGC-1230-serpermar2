@@ -14,11 +14,12 @@ branches:
   only:
   - master
 script:
-	- cd decide
-	- cp travis_local_settings.py local_settings.py
-	- python ./manage.py test --keepdb
-	deploy:
-	  provider: heroku
-	  app: "examen-egc"
-	  strategy: git
-
+- cd decide
+- cp travis_local_settings.py local_settings.py
+- python ./manage.py test --keepdb
+deploy:
+  provider: heroku
+  app: "examen-egc"
+  strategy: git
+  api_key:
+    secure: JmYszKeeo8XtSjoVSNaadbb30bxYgFfc5F2qrn7k30kyhkSUaF318A4UD/CrVWEDL80gNxCmG7an30O2jw2phphXUTswvjHPkziChwnpEdNpqvi8WqYTS3flL6pIiN5TQHrpWBtLHT9aaqpqH97fw5eEqApTp2nyn4Gbluh1G/gGxATroxTlpdBpV6DOYtOBD73udQmc1Uz/xXobBPlyyw1GBer2oP0tEaRFt5hLfyqC2tSVocUd6C9nJWZOxiw5+3S96igwKoj2wymf5vjhuP8McomeECvNbessKJSzmfI3/O3K7043kSBG2swFmLHCQRN3aVKkp2j9SNqppqvnzqvoyu4agQvKqnpSWPT5BVdHn4nxbiPRIk2X8ykIehp53tURh+3VYFNQz10qySrEAG+S6lJNTY7VXPv7XYyv+/QWhPm9J87wyP2v9aQEq3z3IFSFmE6wkA2oScXlVdNo3dqIqbFprFXhlwbd9YA/CWFIQIJmxlpjjv9ukZ7TX0xc4Db9UMdNa+pThO9rikE8uUiZSKqIKOrJZVrwZVefJWWWuHESQ8mJFwpZ0nRriR6C5GUPG7lAK5IyjK8Zlv5Ji4x47Z+LoinoEn8a6f5B3tq5nIP/r36pnbRBv77YCE8qaEaF8ZDRx1m7wOVC47KA2ASAZ6XBif2LUhnQHq3mbpo=
