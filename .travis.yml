@@ -13,9 +13,12 @@ python:
 branches:
   only:
   - master
-install:
-- pip install -r requirements.txt
 script:
-- cd decide
-- python ./manage.py test --keepdb
+	- cd decide
+	- cp travis_local_settings.py local_settings.py
+	- python ./manage.py test --keepdb
+	deploy:
+	  provider: heroku
+	  app: "examen-egc"
+	  strategy: git
 
